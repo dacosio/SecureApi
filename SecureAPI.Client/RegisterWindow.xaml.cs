@@ -1,20 +1,10 @@
 ﻿using MahApps.Metro.Controls.Dialogs;
-using Microsoft.AspNetCore.Http.Features;
 using Newtonsoft.Json;
 using SecureAPI.Models;
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace SecureAPI.Client
 {
@@ -51,13 +41,13 @@ namespace SecureAPI.Client
 
             if (responseObject.IsSuccess)
             {
-                var dialog = new MessageDialog("Your account has been created successfully");
-                await dialog.ShowAsync();
+                //var dialog = new MessageDialog("Your account has been created successfully");
+                //await dialog.ShowAsync()
             }
             else
             {
-                var dialog = new MessageDialog(responseObject.Errors.FirstOrDefault());
-                await dialog.ShowAsync();
+                //var dialog = new MessageDialog(responseObject.Errors.FirstOrDefault());
+                //await dialog.ShowAsync();
             }
            
         }
