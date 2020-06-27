@@ -34,7 +34,24 @@ namespace SecureAPI.Controllers
             }
 
             return BadRequest();
+        }
 
+        [HttpPost("login")]
+        public async Task<IActionResult> LogInAsync([FromBody] LoginViewModelDto model)
+        {
+            if (ModelState.IsValid)
+            {
+                var result = await _userService.LogInUserAsync(model);
+
+                if (result.IsSuccess)
+                {
+                    return Ok(result);
+                }
+
+                return BadRequest(result);
+            }
+
+            return BadRequest("Some properties are not valid");
         }
 
     }

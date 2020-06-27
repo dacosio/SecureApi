@@ -49,10 +49,10 @@ namespace SecureAPI
                     {
                         ValidateIssuer = true,
                         ValidateAudience = true,
-                        ValidAudience = "https://localhost:5001",
-                        ValidIssuer = "https://localhost:5001",
+                        ValidAudience = Configuration["AuthSettings:Audience"],
+                        ValidIssuer = Configuration["AuthSettings:Issuer"],
                         RequireExpirationTime = true,
-                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("This is the key that we will use in the encryption")),
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["AuthSettings:Key"])),
                         ValidateIssuerSigningKey = true,
                     };
                 });

@@ -9,6 +9,7 @@ namespace SecureAPI.Services
     public interface IUserService
     {
         Task<UserManagerResponseDto> RegisterUserAsync(RegisterViewModelDto model);
+        Task<UserManagerResponseDto> LogInUserAsync(LoginViewModelDto model);
 
     }
 }
